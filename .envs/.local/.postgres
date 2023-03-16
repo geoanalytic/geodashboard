@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=geodashboard
+POSTGRES_USER=DnODcfLebdddocqrAhNtwjbNqViEjazf
+POSTGRES_PASSWORD=GDVFTFV45GMrwRZYMd2OVsZWcI9EI30gHIdog1OsmKo1I2cIlE7yjxM6fkLpXlqj
