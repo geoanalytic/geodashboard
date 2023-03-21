@@ -1,5 +1,6 @@
 # define an alias for the specfic python version used in this file.
-FROM python:3.10.9-slim-bullseye as python
+FROM ghcr.io/osgeo/gdal:ubuntu-small-latest as python
+#FROM python:3.10.9-slim-bullseye as python
 
 # Python build stage
 FROM python as python-build-stage
@@ -7,7 +8,7 @@ FROM python as python-build-stage
 ARG BUILD_ENVIRONMENT=local
 
 # Install apt packages
-RUN apt-get update && apt-get install --no-install-recommends -y \
+RUN apt-get update && apt-get install --no-install-recommends -y python3-pip python3-dev apt-utils \
   # dependencies for building Python packages
   build-essential \
   # psycopg2 dependencies
@@ -34,7 +35,7 @@ ENV BUILD_ENV ${BUILD_ENVIRONMENT}
 WORKDIR ${APP_HOME}
 
 # Install required system dependencies
-RUN apt-get update && apt-get install --no-install-recommends -y \
+RUN apt-get update && apt-get install --no-install-recommends -y python3-pip \
   # psycopg2 dependencies
   libpq-dev \
   # Translations dependencies
